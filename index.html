@@ -5,17 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .d-none {
+        display: none;
+    }
+</style>
 <body>
+    <button>Bel</button>
+    <div class="box d-none">
+        ABC
+    </div>
 <script>
-    fetch('https://sshe2025.hnue.edu.vn/v2/api/videos', {
-        headers: {
-            Authorization: "Bearer e2a8c9a689d3fb85163d1ab92c1e95b0a702ad63237bdc612adf46e42b586ce12bd8221d464177264b89dcaa9ec9036b7631fd05550a08b155823f0b0eb6cae2ea9afb399fd041c750a6858b8809fdc4121eaa42e61a4e1774396c9c652594a9c9df0dfde5756b76c5edd7bbf79dacc28bd5394aaad67cd10291d461e3db9a20"
-        }
-    })
-        .then(response => response.json())
-        .then(json => {
-            console.log(json.data);
-        });
+    const eleButton = document.querySelector(".btn");
+    const eleBox = document.querySelector(".box");
+
+    console.log(eleBox);
+
+    function onclick_btn() {
+        console.log("click")
+        eleBox.classList.remove("d-none");
+    }
+
+    eleButton.addEventListener("click", onclick_btn)
 </script>
 </body>
 </html>
