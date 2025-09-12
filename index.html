@@ -23,6 +23,9 @@
         width: 300px;
         height: 300px;
     }
+    .d-none {
+        display: none;
+    }
 </style>
 <body>
     <h1 style="color: aqua; text-align: center;">Tin tức sự kiện</h1>
@@ -33,19 +36,37 @@
         <div class="img">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6U6APC-2Hhpo3QeyfRNJdS_AloZ7SIP9Kcg&s" alt="">
             <h5>Giáo sư Michel Espagne - Cầu nối hợp tác Pháp - Việt giữa Trường</h5>
+            <a href="#" class="btn">Xem thêm -></a>
+            <div class="box d-none">it's a joke</div>
         </div>
         <div class="img">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV7Uoi4bzoAGQhYmv80cwVIekgUYdwbeAy4w&s" alt="">
             <h5>INFORMATION ON DEADLINES FOR ABSTRACT AND FULL PAP</h5>
+            <a href="#" class="btn">Xem thêm -></a>
+            <div class="box d-none">it's a joke</div>
         </div>
         <div class="img">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8nOD-SG2_ky-Nl5vpw9hnqMA7bkRB0ibcwQ&s" alt="">
             <h5>INFORMATION ON CONFERENCE PARTICIPATION FEES</h5>
+            <a href="#" class="btn">Xem thêm -></a>
+            <div class="box d-none">it's a joke</div>
         </div>
         <div class="img">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbYcB_3R6yEG7Fbrqah8g2umHCuzfmcwQggA&s" alt="">
             <h5>THÔNG TIN VỀ KINH PHÍ THAM GIA HỘI THẢO SSHE2025</h5>
+            <a href="#" class="btn">Xem thêm -></a>
+            <div class="box d-none">it's a joke</div>
         </div>
     </div>
+<script>
+    const eleButton = document.querySelector(".btn");
+    const eleBox = document.querySelector(".box");
+    console.log(eleBox);
+    function onclick_btn() {
+        console.log("click");
+        eleBox.classList.remove("d-none");
+    }
+    eleButton.addEventListener("click", onclick_btn)
+</script>
 </body>
 </html>
