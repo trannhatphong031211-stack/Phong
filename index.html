@@ -4,89 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-<style>
-    .container {
-        display: flex;
-        flex-direction: row;
-        align-items: baseline;
-        flex-wrap: nowrap;
-        justify-content: space-between;
-    }
-    .img {
-        padding: 5px;
-        border-radius: 10px;
-    }
-    .img img {
-        display: flex;
-        border-radius: 10px;
-        width: 300px;
-        height: 300px;
-    }
-    .d-none {
-        display: none;
-    }
-</style>
 <body>
-    <h1 style="color: aqua; text-align: center;">Tin tức sự kiện</h1>
-    <p><h4 style="text-align: center;">Khoa học, xã hội, nhân văn và giáo dục trong bối cảnh chuyển đổi số</h4></p>
-    <p style="color: aqua; text-align: center;">____________</p>
     
-    <div class="container">
-        <div class="img">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6U6APC-2Hhpo3QeyfRNJdS_AloZ7SIP9Kcg&s" alt="">
-            <h5>Giáo sư Michel Espagne - Cầu nối hợp tác Pháp - Việt giữa Trường</h5>
-            <a href="#" class="btn">Xem thêm -></a>
-            <div class="box d-none">it's a joke</div>
-        </div>
-        <div class="img">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV7Uoi4bzoAGQhYmv80cwVIekgUYdwbeAy4w&s" alt="">
-            <h5>INFORMATION ON DEADLINES FOR ABSTRACT AND FULL PAP</h5>
-            <a href="#" class="btn">Xem thêm -></a>
-            <div class="box d-none">it's a joke</div>
-        </div>
-        <div class="img">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8nOD-SG2_ky-Nl5vpw9hnqMA7bkRB0ibcwQ&s" alt="">
-            <h5>INFORMATION ON CONFERENCE PARTICIPATION FEES</h5>
-            <a href="#" class="btn">Xem thêm -></a>
-            <div class="box d-none">it's a joke</div>
-        </div>
-        <div class="img">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbYcB_3R6yEG7Fbrqah8g2umHCuzfmcwQggA&s" alt="">
-            <h5>THÔNG TIN VỀ KINH PHÍ THAM GIA HỘI THẢO SSHE2025</h5>
-            <a href="#" class="btn">Xem thêm -></a>
-            <div class="box d-none">it's a joke</div>
-        </div>
-    </div>
-<script>
-    const eleButton = document.querySelector(".btn");
-    const eleBox = document.querySelector(".box");
-    console.log(eleBox);
-    function onclick_btn() {
-        console.log("click");
-        eleBox.classList.remove("d-none");
-    }
-    eleButton.addEventListener("click", onclick_btn)
-
-function fetchPosts() {
-    var url = 'https://jsa44.nextgentra.com/api/posts?populate=*';
-        fetch('https://jsa44.nextgentra.com/api/posts?populate=*', {
-            headers: {
-                'Authorization': 'Bearer 1a3b0df53c752e2ca1b20d8b3445fd68b9a21ab2417c1bfd62ccd9efb576a6387a33b15370eb42cf121e6bb54c13bb84b40ab462de97bc2a0d3a2da0082c6b2a1374848ae02520a8b9ad978b660fda2d141c996fd285df97f2811379c9d4f76392f96fd4a1e0902fe51eaf3d5b17ef7a0775e1b022291722a7b1a8c476f9b523'
-            }
-        })
-        .then(function(response) {
-            if (!response.ok) throw new Error('Lỗi khi gọi API: ' + response.status);
-            return response.json();
-        })
-        .then(function(data) {
-                console.log(data.data);
-        })
-        .catch(function(err) {
-            errorDiv.textContent = err.message;
-        });
-    }
-    fetchPosts();
-</script>
 </body>
 </html>
