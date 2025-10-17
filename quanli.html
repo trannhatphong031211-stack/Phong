@@ -7,26 +7,39 @@
     <link rel="stylesheet" href="./assets/css/style_quanli.css">
 </head>
 <body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <link rel="stylesheet" href="./assets/css/style_main.css">
-</head>
-<body>
     <nav>
         <ul>
             <li><a href="./main.html"><ion-icon name="home"></ion-icon> Home</a></li>
             <li><a href="./quanli.html"><ion-icon name="settings"></ion-icon> Setting</a></li>
-            <li><a href="./chuyenkhoan.html"><ion-icon name="person"></ion-icon> Profile</a></li>
+            <li><a href="./taikhoan.html"><ion-icon name="person"></ion-icon> Profile</a></li>
         </ul>
     </nav>
 
     <section class="container">
-        <div class="table api"></div>
+        <div class="setting-content">
+            <h2>Account Settings</h2>
+            
+            <form class="setting-form">
+                <div class="form-group">
+                    <label for="email">New Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter new email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">New Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Enter new password">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-enter new password">
+                </div>
+
+                <button type="submit">Save</button>
+            </form>
+        </div>
     </section>
+
     <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
 </html>
