@@ -3,24 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bank</title>
+    <title>Menu</title>
     <link rel="stylesheet" href="./assets/css/style_main.css">
 </head>
 <body>
-    <div class="header_login">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Logo_MB_new.png" alt="">
-        <img src="https://dcdesign.vn/image/data/DC%20Design/BAI%20VIET%20CHUYEN%20NGANH/Logo%20dep/logo-ngan-hang%203_resize.png" alt="">
-        <img src="https://dcdesign.vn/image/data/DC%20Design/BAI%20VIET%20CHUYEN%20NGANH/Logo%20dep/logo-ngan-hang%204.png" alt="">
-        <img src="https://i.pinimg.com/736x/78/04/37/78043712450408c8f7b325e195629923.jpg" alt="">
-        <img src="https://rubee.com.vn/wp-content/uploads/2022/01/logo-ngan-hang-agribank.jpg" alt="">
-        <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/02/Logo-CBBank.png" alt="">
-        <h1>Welcome To Mixed Bank</h1>
-    </div>
-        <nav>
-            <ul>
-                <li><a href="./quanli.html">Quản lí</a></li>
-                <li><a href="./chuyenkhoan.html">Chuyển khoản</a></li>
-            </ul>
-        </nav>
+    <nav>
+        <ul>
+            <li><a href="./main.html"><ion-icon name="home"></ion-icon> Home</a></li>
+            <li><a href="./quanli.html"><ion-icon name="settings"></ion-icon> Setting</a></li>
+            <li><a href="./chuyenkhoan.html"><ion-icon name="person"></ion-icon> Profile</a></li>
+        </ul>
+    </nav>
+
+    <section class="container">
+        <div class="table api"></div>
+    </section>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script>
+        const ele_table = document.querySelector(".table.api");
+        const url_api = "https://jsa44.nextgentra.com/api/posts?populate[image][populate]=*";
+        const api_key = "a77380280a76ea2811b475dbbcea8aeee3862a3ecb75ca0333a232116b093b2124cc0ca47b8befd91d03cf70e66940c1b8c75239f083dd96b54a2f937102928c6be43096d0d6f041d0d39d0950f7ab4e2009514eceaa70e6ff0e974c16a77d2bdf1a31b657fd74d022ad28815283bdbbe2c0dcb556c3a79ee5b4ec26b6a16d53";
+
+        fetch(url_api, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${api_key}`
+            }
+        })
+        .then(res => res.json())
+        .then(resp => {
+            if (resp.data && resp.data.length > 0) {
+                resp.data.forEach(item => {
+                    ele_table.innerHTML += `<p>${item.title || 'Không có tiêu đề'}</p>`;
+                    console.log(item)
+                });
+            }
+        });
+    </script>
 </body>
 </html>
